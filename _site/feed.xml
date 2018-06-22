@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title></title>
+    <description>A Blog on exploring the world ......</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 20 Jun 2018 02:59:34 +0530</pubDate>
+    <lastBuildDate>Wed, 20 Jun 2018 02:59:34 +0530</lastBuildDate>
+    <generator>Jekyll v3.8.3</generator>
+    
+      <item>
+        <title>Getting Started with Mozilla</title>
+        <description>Getting started with Mozilla there are many areas where one can contribute to this organization.
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+Hello readers, I would like to share my experience while contributing to the Mozilla the Open Source organization. Mozilla is very broad organization and developers in the organization are very helpful. I am inspired by the commitment of the developers I can surely say Mozilla is one of the best places where all the people around us help to develop our skills and help when we were struck anywhere.
+
+This blog post lets you know how my journey with Mozilla is started and also how a complete beginner can start their contribution to this organization.
+
+&lt;!--more--&gt;
+
+Getting started with Mozilla there are many areas where one can contribute to this organization. You can refer the link &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Mozilla/Developer_guide&quot; rel=&quot;noopener&quot;&gt;Developer-guide&lt;/a&gt; any time for building, contributing, submitting patches etc., This blog post mainly focusses on &lt;strong&gt;Firefox Desktop&lt;/strong&gt; for Linux (the Linux-distribution used here is &lt;em&gt;Ubuntu 16.04&lt;/em&gt;).
+&lt;h2&gt;&lt;strong&gt;Let's get started:&lt;/strong&gt;&lt;/h2&gt;
+&lt;ul&gt;
+    &lt;li&gt;Make sure your system satisfies all the requirements before Building.
+        &lt;ul&gt;
+            &lt;li&gt;These Requirements for Unix/Linux.
+                &lt;ul&gt;
+                    &lt;li&gt;2G RAM with lots of available swap space. Additional RAM will significantly decrease build time.&lt;/li&gt;
+                    &lt;li&gt;For debug builds: at least 8 GB free disk space&lt;/li&gt;
+                    &lt;li&gt;For optimized builds: at least 1 GB free disk space (6 GB recommended)&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li&gt;The following procedure is for 64 bit Linux Operating System. To check which bit processor you use, use the command &lt;code&gt;uname -m&lt;/code&gt; &lt;code&gt;&lt;/code&gt;in the terminal which gives &lt;code&gt;x86_64&lt;/code&gt; denoting 64-bit processor.&lt;/li&gt;
+            &lt;li&gt;You will need python 2.6 or 2.7 installed, which you can check with &lt;code&gt;python --version.&lt;/code&gt;&lt;/li&gt;
+            &lt;li&gt;Finally, a reasonably fast internet connection and 30GB of free disk space.&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+For more detailed list visit &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Mozilla/Developer_guide/Build_Instructions/Linux_Prerequisites&quot;&gt;build-requirements&lt;/a&gt;.
+
+With everything set up let's jump into building firefox.
+
+Create a directory named &quot;src&quot; under your home directory:
+&lt;pre&gt;&lt;code&gt;mkdir src &amp;&amp; cd src&lt;/code&gt;&lt;/pre&gt;
+Next download &lt;a href=&quot;https://hg.mozilla.org/mozilla-central/raw-file/default/python/mozboot/bin/bootstrap.py&quot;&gt;the bootstrap.py script&lt;/a&gt; and save it in the &quot;&lt;strong&gt;src/&lt;/strong&gt;&quot; directory.
+
+Now you can start the bootstrapper using python 2.7 or 2.6 in the terminal
+&lt;pre&gt;&lt;code&gt;python bootstrap.py&lt;/code&gt;&lt;/pre&gt;
+Running this command leads you to some prompts and then follow them for building in the way you prefer if you are new to Mozilla and not sure what to choose? go with the default.
+&lt;h2&gt;&lt;strong&gt;Community Access:&lt;/strong&gt;&lt;/h2&gt;
+For contributing to any organization you need to get access to the developer community, IRC, mailing list, Bug-Tracker.
+
+&lt;a href=&quot;https://bugzilla.mozilla.org/&quot;&gt;Bugzilla&lt;/a&gt; is the Mozilla's issue tracker, you will need an account in this tracker to log into and comment or submit a patch for a bug. You can use GitHub account also for making an account.
+
+Most of the discussion in the community takes place in the IRC. You can ask for guidance and help during the build or fixing an error/bug in the IRC. I prefer the IRC client &lt;a href=&quot;https://www.irccloud.com/&quot;&gt;IRCCLOUD&lt;/a&gt; for chatting in the IRC. Follow this &lt;a href=&quot;https://wiki.mozilla.org/IRC&quot;&gt;documentation&lt;/a&gt; to know how to use IRC. Some of the important channel names which may help you in the beginning are
+
+&lt;em&gt;&lt;code&gt;#introduction, #build, #coding, #newbies, #qa &lt;/code&gt;&lt;/em&gt; these channels will help you by providing support and help.
+&lt;h2&gt;Getting the source code:&lt;/h2&gt;
+If you didn't allow the bootstrapper to download the Mozilla-unified you can clone it using Mercurial (a VCS which Mozilla community uses).
+&lt;pre&gt;&lt;code&gt;hg clone https://hg.mozilla.org/mozilla-central &lt;/code&gt;&lt;/pre&gt;
+&lt;span style=&quot;text-decoration: underline;&quot;&gt;&lt;strong&gt;**NOTE**:&lt;/strong&gt;&lt;/span&gt; If your network is not fast enough or having any interruptions in the connection cloning will give some issues and source code will not be downloaded properly. For this try
+
+(If cloning is completed without any errors you can skip this step).
+
+&lt;span style=&quot;text-decoration: underline;&quot;&gt;&lt;strong&gt;Mercurial Bundle:&lt;/strong&gt;&lt;/span&gt;
+
+The advantage of building the source code using bundles is unlike the &lt;code&gt;hg clone&lt;/code&gt; you can pause and resume your download whenever there is an interruption to the connection. For this download the desired bundle of source code, you are interested in working and download it.
+
+Up-to-date bundles of some repositories can be found in &lt;a href=&quot;https://hg.mozilla.org/&quot;&gt;https://hg.mozilla.org/&lt;/a&gt; which are available on a CDN (Content Delivery Network) at &lt;a href=&quot;https://hg.cdn.mozilla.net/&quot;&gt;https://hg.cdn.mozilla.net/&lt;/a&gt; you can download the Mozilla-central repository from here. Generally, &lt;strong&gt;zstd bundles&lt;/strong&gt; are preferred they are smaller in size and faster to decompress but they are supported on the modern version of mercurial clients only. To avoid confusion rename the downloaded file as &quot;&lt;strong&gt;bundle.hg&lt;/strong&gt;&quot;.
+
+Follow the below steps:
+&lt;pre class=&quot;line-numbers  language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;mkdir mozilla-central
+hg init mozilla-central
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;line-numbers  language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;cd mozilla-central
+hg unbundle /...../bundle.hg
+ &lt;code&gt;hg config --edit&lt;/code&gt; or  &lt;code&gt; EDITOR=&lt;editor-of-your-choice&gt; hg config --edit&lt;/code&gt; &lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;line-numbers  language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;[paths]Let
+default = https://hg.mozilla.org/mozilla-central/&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;line-numbers  language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;hg pull&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;line-numbers  language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;hg update&lt;/code&gt;&lt;/pre&gt;
+Here we initialized mercurial in the Mozilla-central directory. and configured .hgrc for default path, which will pull or push to the default link. Try to fix any errors if you encounter any in these steps. Once everything works properly, we successfully downloaded the source code for Firefox. The commands &quot;&lt;strong&gt;hg pull&quot; &lt;/strong&gt;and &quot;&lt;strong&gt;hg update&quot; &lt;/strong&gt;will help you to keep the source up-to-date.
+&lt;h2&gt;&lt;span style=&quot;text-decoration: underline;&quot;&gt;&lt;strong&gt;Building the Source Code:&lt;/strong&gt;&lt;/span&gt;&lt;/h2&gt;
+Building a source code is similar to compiling your program before execution here it is more simple. But if you are building Mozilla-central for the first time it's better to grab a cup of coffee and a novel to read, because it takes a lot of time for building. You can anytime build your code using :
+&lt;pre&gt;&lt;code&gt;./mach build&lt;/code&gt;&lt;/pre&gt;
+If you encounter any errors related to LLVM/CLANG install the version asked for and again run &quot;&lt;strong&gt;./mach build&quot;&lt;/strong&gt;.
+&lt;h2&gt;&lt;span style=&quot;text-decoration: underline;&quot;&gt;Let the  fun begin:&lt;/span&gt;&lt;/h2&gt;
+With everything set you may now run your code and visualize the project when you run the code, using &lt;code&gt;./mach run&lt;/code&gt; which will launch the nightly version of Firefox. With this you are ready to hack into the firefox and explore, fix-issues, create new features ...etc., You can now start communicating to people via #introduction take up a &quot;&lt;strong&gt;good-first-bug&quot;&lt;/strong&gt; and start contributing.
+
+Have a happy contribution...
+
+See you all later with another blog post.
+&lt;/body&gt;
+&lt;/html&gt;</description>
+        <pubDate>Thu, 14 Jun 2018 00:00:00 +0530</pubDate>
+        <link>http://localhost:4000/mozilla/tutorial/open-source/2018/06/14/getting-started-with-mozilla.html</link>
+        <guid isPermaLink="true">http://localhost:4000/mozilla/tutorial/open-source/2018/06/14/getting-started-with-mozilla.html</guid>
+        
+        
+        <category>Mozilla</category>
+        
+        <category>tutorial</category>
+        
+        <category>Open-source</category>
+        
+      </item>
+    
+  </channel>
+</rss>
