@@ -1,5 +1,9 @@
 # Site
+<<<<<<< HEAD
 name: "Amfoss-blog"
+=======
+name: "KillSwitch"
+>>>>>>> 1031c56aa71df422b1cf0f73ca7882e19d7ba3ea
 description: "A Blog on exploring the world ......"
 meta_description: "Used Jekyll template, it's open-source."
 logo: 'assets/images/logo.png'
